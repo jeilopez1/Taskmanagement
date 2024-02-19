@@ -1,10 +1,11 @@
 from django.contrib import admin
+from .models import User, Task, Role, state_Task, Comment  
 
-# Register your models here.
-from django.contrib import admin
-from django.apps import apps
+def register_models(*modelos):
+    for modelo in modelos:
+        class ModeloAdmin(admin.ModelAdmin):
+            list_display = [field.name for field in modelo._meta.fields]
 
-class MiModeloAdmin(admin.ModelAdmin):
-    app_models = apps.get_app_config('advanced_task_management').get_models()
-    for model in app_models:
-        admin.site.register(model)
+        admin.site.register(modelo, ModeloAdmin)
+
+register_models(User, Task, Role, state_Task.stateTask, Comment)  # Añade todos tus modelos aquí

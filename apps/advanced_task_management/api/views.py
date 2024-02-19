@@ -9,5 +9,9 @@ class CustomTokenObtainPairView(TokenObtainPairView):
         if serializer.is_valid():
             return Response(serializer.validated_data, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_401_UNAUTHORIZED)
+    
+class AddTaskView(APIView):
+    
+    pass
 
 
