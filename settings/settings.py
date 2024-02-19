@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework_simplejwt',
     'apps.advanced_task_management',
+
 ]
 
 MIDDLEWARE = [
@@ -82,8 +84,11 @@ DATABASES = {
         'NAME': 'advanced_task_management',
         'USER': 'prueba',
         'PASSWORD': 'prueba',
-        'HOST': 'postgis',  # El nombre del servicio de PostgreSQL en Docker
-        'PORT': 5432,  # El puerto de PostgreSQL
+        # 'HOST': 'localhost',  # Local con el contenedor de docker instalado
+        # 'PORT': 5433,  # Local con el contenedor de docker instalado
+
+        'HOST': 'postgis',  # Cuando este el Docker ejecutrado
+        'PORT': 5432,  # Cuando este el Docker ejecutrado
     }
 }
 
@@ -128,3 +133,9 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
+}

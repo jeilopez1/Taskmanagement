@@ -6,6 +6,7 @@ class User(models.Model):
     correo = models.EmailField(unique=True)
     contrasena = models.CharField(max_length=100)
     rol = models.ForeignKey(Role, on_delete=models.CASCADE)
+    state = models.BooleanField(default=True)
 
     def __str__(self):
         return self.nombre
