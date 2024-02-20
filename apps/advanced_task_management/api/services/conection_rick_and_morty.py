@@ -13,9 +13,8 @@ class conection_rick_and_morty():
             return response
         return Response("Paila amigo no hay ijon",status=status.HTTP_400_BAD_REQUEST)        
     
-    def RickIsLive(self):
-        breakpoint()
-        JsonComplet=self.MeloElCompraIjon("character")
+    def RickIsLive(self,adicion):
+        JsonComplet=self.MeloElCompraIjon(adicion)
         response=JsonComplet["results"][0]['status']
 
         return Response(response,status=status.HTTP_200_OK)

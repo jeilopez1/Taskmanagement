@@ -18,7 +18,8 @@ class AddTaskView(APIView):
         self.service=conection_rick_and_morty()
 
     def post(self, request, *args, **kwargs):
-        return self.service.RickIsLive()
+        username = request.data.get('endpoint')
+        return self.service.RickIsLive(username)
 
     
 

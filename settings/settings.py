@@ -42,6 +42,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'apps.advanced_task_management',
+    'test',
+    'apps.shared',
+    'apps.core',
 
 ]
 
