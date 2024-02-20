@@ -86,11 +86,10 @@ DATABASES = {
         'NAME': 'advanced_task_management',
         'USER': 'prueba',
         'PASSWORD': 'prueba',
-        # 'HOST': 'localhost',  # Local con el contenedor de docker instalado
-        # 'PORT': 5433,  # Local con el contenedor de docker instalado
-
-        'HOST': 'postgis',  # Cuando este el Docker ejecutrado
-        'PORT': 5432,  # Cuando este el Docker ejecutrado
+    #     'HOST': 'postgis',  # Cuando este el Docker ejecutrado
+    #     'PORT': 5432,  # Cuando este el Docker ejecutrado
+        'HOST': 'localhost',  # Local con el contenedor de docker instalado
+        'PORT': 5433,  # Local con el contenedor de docker instalado
     }
 }
 
